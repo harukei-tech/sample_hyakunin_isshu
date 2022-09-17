@@ -46,22 +46,19 @@ class Board extends React.Component<Props, BoardState>{
     }
 
     nextCard() {
-        let displayedCardIds = this.state.displayedCardIds.slice()
+        let displayedCardIds = this.state.displayedCardIds.filter((v, index) => this.state.activeCardId !== v)
         let cardAttributes = this.state.cardAttributes.slice()
         cardAttributes[this.state.activeCardId - 1].remove()
-        console.log(this.state.activeCardId - 1)
-        console.log(cardAttributes[this.state.activeCardId - 1])
 
-        console.log(Math.floor(Math.random() * this.state.displayedCardIds.length))
-
-        const activeCardId = this.state.displayedCardIds[Math.floor(Math.random() * this.state.displayedCardIds.length)];
+        const activeCardId = displayedCardIds[Math.floor(Math.random() * displayedCardIds.length)];
         cardAttributes[activeCardId - 1].activate()
+
 
         this.setState({
             currentPlayer: "FIRST",
             activeCardId: activeCardId,
             cardAttributes: cardAttributes,
-            displayedCardIds: displayedCardIds.filter((v, index) => this.state.activeCardId !== v),
+            displayedCardIds: displayedCardIds,
         })
     }
 
