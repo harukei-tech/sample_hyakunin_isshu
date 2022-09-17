@@ -1,5 +1,6 @@
 import React from 'react'
 import Board from './board'
+import Timer from './timer'
 
 type GAME_STATE = 'START' | 'IN_GAME' | 'END'
 
@@ -87,6 +88,15 @@ class Game extends React.Component<{}, GameState>{
         })
     }
 
+    endGame() {
+        console.log("ended")
+        this.setState({
+            scene: 'END',
+            point: this.state.point,
+            shuffledIdList: this.state.shuffledIdList,
+        })
+    }
+
     render() {
         switch (this.state.scene) {
             case 'START':
@@ -96,17 +106,23 @@ class Game extends React.Component<{}, GameState>{
                     </div>
                 )
             case 'IN_GAME':
-                return (
+            case 'END':
+                let board
+                if(this.state.scene == 'IN_GAME') {
+                    board =  <div className="game-board">
+                        <Board endGame={() => this.endGame()} correctAnswer={() => this.increasePoint()} wrongAnswer={() => this.decreasePoint()} shuffledIdList={this.state.shuffledIdList} />
+                    </div>
+                }
+                    return (
                     <div className="game">
                         <div className="game-info">
                             <div>point: {this.state.point}</div>
+                            <Timer stop={this.state.scene == 'END'}></Timer>
                         </div>
-                        <div className="game-board">
-                            <Board correctAnswer={() => this.increasePoint()} wrongAnswer={() => this.decreasePoint()} shuffledIdList={this.state.shuffledIdList} />
-                        </div>
+                        {board}
                     </div>
                 )
-            case 'END':
+            default:
                 return (
                     <div></div>
                 )

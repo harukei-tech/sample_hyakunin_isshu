@@ -9,6 +9,7 @@ type PLAYER = "FIRST" | "SECOND";
 type Props = {
     correctAnswer: () => void,
     wrongAnswer: () => void,
+    endGame: () => void,
     shuffledIdList: Array<number>,
     // cards: Array<CardAttribute>,
 }
@@ -41,7 +42,7 @@ class Board extends React.Component<Props, BoardState>{
             currentPlayer: "FIRST",
             activeCardId: activeCardId,
             cardAttributes: cardAttributes,
-            displayedCardIds: displayedCardIds,
+            displayedCardIds: displayedCardIds
         }
     }
 
@@ -50,9 +51,18 @@ class Board extends React.Component<Props, BoardState>{
         let cardAttributes = this.state.cardAttributes.slice()
         cardAttributes[this.state.activeCardId - 1].remove()
 
+        if(displayedCardIds.length == 0) {
+            this.setState({
+                currentPlayer: "FIRST",
+                activeCardId: this.state.activeCardId,
+                cardAttributes: cardAttributes,
+                displayedCardIds: displayedCardIds,
+            })
+            return
+        }
+
         const activeCardId = displayedCardIds[Math.floor(Math.random() * displayedCardIds.length)];
         cardAttributes[activeCardId - 1].activate()
-
 
         this.setState({
             currentPlayer: "FIRST",
@@ -72,6 +82,9 @@ class Board extends React.Component<Props, BoardState>{
     correctAnswer() {
         this.props.correctAnswer()
         this.nextCard()
+        if(this.state.displayedCardIds.length == 1) {
+            this.props.endGame()
+        }
     }
 
     renderCard(id: number) {
