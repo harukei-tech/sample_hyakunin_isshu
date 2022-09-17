@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "WATCHPACK_POLLING=true react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mv build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -54,5 +54,5 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1"
   },
-  "homepage": "https://harukei-tech.github.io/nextjs_project/"
+  "homepage": "https://harukei-tech.github.io/sample_hyakunin_isshu/"
 }

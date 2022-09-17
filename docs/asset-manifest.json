@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/sample_hyakunin_isshu/static/css/main.3aa236cd.css",
+    "main.js": "/sample_hyakunin_isshu/static/js/main.a858ee71.js",
+    "static/js/845.f744839a.chunk.js": "/sample_hyakunin_isshu/static/js/845.f744839a.chunk.js",
+    "static/js/787.8bdb6edf.chunk.js": "/sample_hyakunin_isshu/static/js/787.8bdb6edf.chunk.js",
+    "index.html": "/sample_hyakunin_isshu/index.html",
+    "main.3aa236cd.css.map": "/sample_hyakunin_isshu/static/css/main.3aa236cd.css.map",
+    "main.a858ee71.js.map": "/sample_hyakunin_isshu/static/js/main.a858ee71.js.map",
+    "845.f744839a.chunk.js.map": "/sample_hyakunin_isshu/static/js/845.f744839a.chunk.js.map",
+    "787.8bdb6edf.chunk.js.map": "/sample_hyakunin_isshu/static/js/787.8bdb6edf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3aa236cd.css",
+    "static/js/main.a858ee71.js"
+  ]
+}
