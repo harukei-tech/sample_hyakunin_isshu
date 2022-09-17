@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './card';
+import TargetCard from './target_card';
 import CardAttribute from '../../static/cardAttribute'
 import Source from './../../static/hyakunin.json'
 
@@ -47,7 +48,11 @@ class Board extends React.Component<Props, BoardState>{
     nextCard() {
         let displayedCardIds = this.state.displayedCardIds.slice()
         let cardAttributes = this.state.cardAttributes.slice()
-        cardAttributes[this.state.activeCardId - 1].deactivate()
+        cardAttributes[this.state.activeCardId - 1].remove()
+        console.log(this.state.activeCardId - 1)
+        console.log(cardAttributes[this.state.activeCardId - 1])
+
+        console.log(Math.floor(Math.random() * this.state.displayedCardIds.length))
 
         const activeCardId = this.state.displayedCardIds[Math.floor(Math.random() * this.state.displayedCardIds.length)];
         cardAttributes[activeCardId - 1].activate()
@@ -60,7 +65,10 @@ class Board extends React.Component<Props, BoardState>{
         })
     }
 
-    wrongAnswer() {
+    wrongAnswer(id:number) {
+        if(this.state.cardAttributes[id - 1].isRemoved()) {
+            return
+        }
         this.props.wrongAnswer()
     }
 
@@ -70,7 +78,9 @@ class Board extends React.Component<Props, BoardState>{
     }
 
     renderCard(id: number) {
-        return <Card key={id} cardAttribute={this.state.cardAttributes[id - 1]} correctAnswer={() => this.correctAnswer()} wrongAnswer={() => this.wrongAnswer()} />
+        return this.state.cardAttributes[id - 1].isActive()
+            ? <TargetCard key={id} cardAttribute={this.state.cardAttributes[id - 1]} onClick={() => this.correctAnswer()} />
+            : <Card key={id} cardAttribute={this.state.cardAttributes[id - 1]} onClick={() => this.wrongAnswer(id)} />
     }
 
     render() {

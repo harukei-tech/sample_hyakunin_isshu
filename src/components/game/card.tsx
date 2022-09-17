@@ -1,30 +1,18 @@
+import React from 'react';
 import CardAttribute from '../../static/cardAttribute'
-import Voice from './voice'
 
 type Props = {
-    cardAttribute: CardAttribute
-    correctAnswer: () => void
-    wrongAnswer: () => void
-}
-type State = {
-    be_silent: boolean
+    cardAttribute: CardAttribute,
+    onClick: () => void
 }
 
-
-const Card = (props: Props, state:State) => {
-    if(props.cardAttribute.isActive()) {
-        console.log(props)
-        console.log(props.cardAttribute.getVoiceFile())
+class Card extends React.Component<Props>{
+    render() {
+        let classes = "card"
+        classes += this.props.cardAttribute.isRemoved() ? " removed" : ""
         return (
-            <div key={props.cardAttribute.getId()} className="card" onClick={() => props.correctAnswer()}>
-                <Voice filename={props.cardAttribute.getVoiceFile()} be_silent={state.be_silent}/>
-                {props.cardAttribute.getLastedBody()}
-            </div>
-        )
-    } else {
-        return (
-            <div key={props.cardAttribute.getId()} className="card" onClick={() => props.wrongAnswer()}>
-                {props.cardAttribute.getLastedBody()}
+            <div key={this.props.cardAttribute.getId()} className={classes} onClick={() => this.props.onClick()}>
+                {this.props.cardAttribute.getLastedBody()}
             </div>
         )
     }

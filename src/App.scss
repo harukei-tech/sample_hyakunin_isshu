@@ -86,7 +86,10 @@ div.card {
   &:nth-child(n+4) {
     margin-top: 10px;
   }
-  
+  &.removed {
+    transition: all 5s 3s ease;
+    opacity: 0;
+  }
 }
 
 

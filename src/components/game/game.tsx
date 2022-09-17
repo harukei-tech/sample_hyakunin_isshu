@@ -1,7 +1,5 @@
 import React from 'react'
 import Board from './board'
-import Source from './../../static/hyakunin.json'
-import CardAttribute from '../../static/cardAttribute'
 
 type GAME_STATE = 'START' | 'IN_GAME' | 'END'
 

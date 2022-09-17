@@ -1,11 +1,11 @@
 import useSound from 'use-sound'
 type Props = {
-    filename: string,
-    be_silent: boolean
+    filename: string
 }
 
 const Voice = (props: Props) => {
     const soundfile = '/sample_hyakunin_isshu/voices/all/' + props.filename
+    console.log(soundfile)
     const [play] = useSound(soundfile, {volume: 0.2})
     play()
 

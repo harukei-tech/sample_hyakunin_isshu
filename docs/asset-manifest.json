@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/sample_hyakunin_isshu/static/css/main.3aa236cd.css",
-    "main.js": "/sample_hyakunin_isshu/static/js/main.6b539a64.js",
+    "main.css": "/sample_hyakunin_isshu/static/css/main.e837e24d.css",
+    "main.js": "/sample_hyakunin_isshu/static/js/main.321e1bc1.js",
     "static/js/845.f744839a.chunk.js": "/sample_hyakunin_isshu/static/js/845.f744839a.chunk.js",
     "static/js/787.8bdb6edf.chunk.js": "/sample_hyakunin_isshu/static/js/787.8bdb6edf.chunk.js",
     "index.html": "/sample_hyakunin_isshu/index.html",
-    "main.3aa236cd.css.map": "/sample_hyakunin_isshu/static/css/main.3aa236cd.css.map",
-    "main.6b539a64.js.map": "/sample_hyakunin_isshu/static/js/main.6b539a64.js.map",
+    "main.e837e24d.css.map": "/sample_hyakunin_isshu/static/css/main.e837e24d.css.map",
+    "main.321e1bc1.js.map": "/sample_hyakunin_isshu/static/js/main.321e1bc1.js.map",
     "845.f744839a.chunk.js.map": "/sample_hyakunin_isshu/static/js/845.f744839a.chunk.js.map",
     "787.8bdb6edf.chunk.js.map": "/sample_hyakunin_isshu/static/js/787.8bdb6edf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3aa236cd.css",
-    "static/js/main.6b539a64.js"
+    "static/css/main.e837e24d.css",
+    "static/js/main.321e1bc1.js"
   ]
 }
