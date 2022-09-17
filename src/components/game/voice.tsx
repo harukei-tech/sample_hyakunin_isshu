@@ -5,7 +5,7 @@ type Props = {
 }
 
 const Voice = (props: Props) => {
-    const soundfile = '/voices/all/' + props.filename
+    const soundfile = '/sample_hyakunin_isshu/voices/all/' + props.filename
     const [play] = useSound(soundfile, {volume: 0.2})
     play()
 
