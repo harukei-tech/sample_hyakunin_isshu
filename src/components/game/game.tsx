@@ -98,11 +98,11 @@ class Game extends React.Component<{}, GameState>{
             case 'IN_GAME':
                 return (
                     <div className="game">
-                        <div className="game-board">
-                            <Board correctAnswer={() => this.increasePoint()} wrongAnswer={() => this.decreasePoint()} shuffledIdList={this.state.shuffledIdList} />
-                        </div>
                         <div className="game-info">
                             <div>point: {this.state.point}</div>
+                        </div>
+                        <div className="game-board">
+                            <Board correctAnswer={() => this.increasePoint()} wrongAnswer={() => this.decreasePoint()} shuffledIdList={this.state.shuffledIdList} />
                         </div>
                     </div>
                 )

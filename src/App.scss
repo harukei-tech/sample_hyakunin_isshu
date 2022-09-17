@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -43,7 +44,8 @@ body {
   margin: 20px;
 }
 
-ol, ul {
+ol,
+ul {
   padding-left: 30px;
 }
 
@@ -55,6 +57,12 @@ ol, ul {
 
 .status {
   margin-bottom: 10px;
+}
+
+div.game {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 
 div.card {
@@ -71,6 +79,7 @@ div.card {
   text-align: center;
   color: #000000;
   width: 110px;
+  max-width: 30%;
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl !important;
   text-orientation: upright;
@@ -80,12 +89,15 @@ div.card {
   &:nth-child(3n+1) {
     clear: both;
   }
+
   &:nth-child(n+2):not(:nth-child(3n+1)) {
     margin-left: 10px;
   }
+
   &:nth-child(n+4) {
     margin-top: 10px;
   }
+
   &.removed {
     transition: all 5s 3s ease;
     opacity: 0;
