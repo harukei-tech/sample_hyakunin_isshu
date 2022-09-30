@@ -78,8 +78,8 @@ div.card {
   padding: 0;
   text-align: center;
   color: #000000;
-  width: 110px;
-  max-width: 30%;
+  // width: 110px;
+  // max-width: 30%;
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl !important;
   text-orientation: upright;
@@ -90,9 +90,9 @@ div.card {
     clear: both;
   }
 
-  &:nth-child(n+2):not(:nth-child(3n+1)) {
-    margin-left: 10px;
-  }
+  // &:nth-child(n+2):not(:nth-child(3n+1)) {
+  //   margin-left: 5px;
+  // }
 
   &:nth-child(n+4) {
     margin-top: 10px;
