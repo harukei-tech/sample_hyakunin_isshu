@@ -66,37 +66,37 @@ div.game {
 }
 
 div.card {
-  background: rgb(138, 255, 165);
-  border: 1px solid #999;
-  float: left;
-  // font-size: 26px;
+  // background: rgb(138, 255, 165);
+  // border: 1px solid #999;
+  // float: left;
+  // // font-size: 26px;
   font-weight: bold;
-  line-height: 34px;
-  height: 134px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  // text-align: center;
+  // line-height: 34px;
+  // max-height: 134px;
+  // margin-right: -1px;
+  // margin-top: -1px;
+  // padding: 0;
+  // // text-align: center;
   color: #000000;
-  // width: 110px;
-  // max-width: 30%;
-  -ms-writing-mode: tb-rl;
+  // // width: 110px;
+  // // max-width: 30%;
+  // -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl !important;
   text-orientation: upright;
-  word-wrap: break-word;
+  // word-wrap: break-word;
   text-align: start;
 
-  &:nth-child(3n+1) {
-    clear: both;
-  }
-
-  // &:nth-child(n+2):not(:nth-child(3n+1)) {
-  //   margin-left: 5px;
+  // &:nth-child(3n+1) {
+  //   clear: both;
   // }
 
-  &:nth-child(n+4) {
-    margin-top: 10px;
-  }
+  // // &:nth-child(n+2):not(:nth-child(3n+1)) {
+  // //   margin-left: 5px;
+  // // }
+
+  // &:nth-child(n+4) {
+  //   margin-top: 10px;
+  // }
 
   &.removed {
     transition: all 5s 3s ease;

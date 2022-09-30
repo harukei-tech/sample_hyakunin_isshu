@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './card';
 import TargetCard from './target_card';
 import CardAttribute from '../../static/cardAttribute'
-import Bource from '../../static/hyakunin1.json'
+import Source from '../../static/hyakunin1.json'
 
 type PLAYER = "FIRST" | "SECOND";
 
@@ -31,14 +31,13 @@ class Board extends React.Component<Props, BoardState>{
 
         const displayedCardIds = props.shuffledIdList.slice(0, this.v * this.h)
         const activeCardId = displayedCardIds[Math.floor(Math.random() * displayedCardIds.length)];
-        const cardAttributes = Bource
+        const cardAttributes = Source
             // .filter(d => {
             //     return displayedIds.includes(d.n)
             // })
             .map(d => {
                 return new CardAttribute(d, activeCardId === d.id)
             })
-        console.log(cardAttributes)
 
         this.state = {
             currentPlayer: "FIRST",
@@ -97,7 +96,7 @@ class Board extends React.Component<Props, BoardState>{
 
     render() {
         return (
-            <div>
+            <div className='flex flex-wrap'>
                 {
                     this.props.shuffledIdList.map((id, index) => {
                         return this.renderCard(id)

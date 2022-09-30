@@ -13,21 +13,22 @@ const TargetCard = (props: Props) => {
         volume: 0.2,
         autoplay: true
     })
+    let classes = "card rounded border bg-lime-500 p-3 w-1/3 "
 
     return (
-        <div key={props.cardAttribute.getId()} className="card w-1/3" onClick={() => {
+        <div key={props.cardAttribute.getId()} className={classes} onClick={() => {
             stop()
             props.onClick()
         }}>
-                <p className='flex-auto'>
+                <div>
                     {props.cardAttribute.getLine1Body()}
-                </p>
-                <p className='flex-auto'>
+                </div>
+                <div>
                     {props.cardAttribute.getLine2Body()}
-                </p>
-                <p className='flex-auto'>
+                </div>
+                <div>
                     {props.cardAttribute.getLine3Body()}
-                </p>
+                </div>
         </div>
     )
 }
