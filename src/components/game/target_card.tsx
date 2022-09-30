@@ -19,7 +19,15 @@ const TargetCard = (props: Props) => {
             stop()
             props.onClick()
         }}>
-            {props.cardAttribute.getLastedBody()}
+                <p className='flex-auto'>
+                    {props.cardAttribute.getLine1Body()}
+                </p>
+                <p className='flex-auto'>
+                    {props.cardAttribute.getLine2Body()}
+                </p>
+                <p className='flex-auto'>
+                    {props.cardAttribute.getLine3Body()}
+                </p>
         </div>
     )
 }
