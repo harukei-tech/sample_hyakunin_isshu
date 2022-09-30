@@ -9,13 +9,13 @@ type Props = {
 
 const TargetCard = (props: Props) => {
     const soundfile = '/sample_hyakunin_isshu/voices/all/' + props.cardAttribute.getVoiceFile()
-    const [play, {stop}] = useSound(soundfile, {
+    const [_, {stop}] = useSound(soundfile, {
         volume: 0.2,
         autoplay: true
     })
 
     return (
-        <div key={props.cardAttribute.getId()} className="card" onClick={() => {
+        <div key={props.cardAttribute.getId()} className="card w-1/3" onClick={() => {
             stop()
             props.onClick()
         }}>

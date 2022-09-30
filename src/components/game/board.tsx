@@ -51,7 +51,7 @@ class Board extends React.Component<Props, BoardState>{
         let cardAttributes = this.state.cardAttributes.slice()
         cardAttributes[this.state.activeCardId - 1].remove()
 
-        if(displayedCardIds.length == 0) {
+        if(displayedCardIds.length === 0) {
             this.setState({
                 currentPlayer: "FIRST",
                 activeCardId: this.state.activeCardId,
@@ -82,7 +82,7 @@ class Board extends React.Component<Props, BoardState>{
     correctAnswer() {
         this.props.correctAnswer()
         this.nextCard()
-        if(this.state.displayedCardIds.length == 1) {
+        if(this.state.displayedCardIds.length === 1) {
             this.props.endGame()
         }
     }

@@ -108,7 +108,7 @@ class Game extends React.Component<{}, GameState>{
             case 'IN_GAME':
             case 'END':
                 let board
-                if(this.state.scene == 'IN_GAME') {
+                if(this.state.scene === 'IN_GAME') {
                     board =  <div className="game-board">
                         <Board endGame={() => this.endGame()} correctAnswer={() => this.increasePoint()} wrongAnswer={() => this.decreasePoint()} shuffledIdList={this.state.shuffledIdList} />
                     </div>
@@ -117,7 +117,7 @@ class Game extends React.Component<{}, GameState>{
                     <div className="game">
                         <div className="game-info">
                             <div>point: {this.state.point}</div>
-                            <Timer stop={this.state.scene == 'END'}></Timer>
+                            <Timer stop={this.state.scene === 'END'}></Timer>
                         </div>
                         {board}
                     </div>
