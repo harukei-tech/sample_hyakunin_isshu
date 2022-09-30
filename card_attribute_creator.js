@@ -21,5 +21,3 @@ const cardAttributes = Source
         'line3Body': line3Body,
     }
 })
-
-console.log(cardAttributes)

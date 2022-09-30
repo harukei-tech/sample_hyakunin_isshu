@@ -10,6 +10,7 @@ class CardAttribute {
     private line3Body: string
     private voice_file: string
     private is_active: boolean
+    is_missed: boolean
     is_removed: boolean
 
     constructor(d: any, is_active: boolean) {
@@ -24,6 +25,7 @@ class CardAttribute {
         this.line3Body = d.line3Body
         this.voice_file = 'a' + String(this.id).padStart(3, '0') + '.mp3'
         this.is_active = is_active
+        this.is_missed = false
         this.is_removed = false
     }
 
@@ -56,6 +58,18 @@ class CardAttribute {
 
     isActive() {
         return this.is_active
+    }
+
+    missed() {
+        this.is_missed = true
+    }
+
+    resetMissed() {
+        this.is_missed = false
+    }
+
+    isMissed() {
+        return this.is_missed
     }
 
     isRemoved() {

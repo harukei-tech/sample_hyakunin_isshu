@@ -62,6 +62,10 @@ class Board extends React.Component<Props, BoardState>{
             return
         }
 
+        cardAttributes.forEach(card => {
+            card.resetMissed()
+        })
+
         const activeCardId = displayedCardIds[Math.floor(Math.random() * displayedCardIds.length)];
         cardAttributes[activeCardId - 1].activate()
 
@@ -74,9 +78,10 @@ class Board extends React.Component<Props, BoardState>{
     }
 
     wrongAnswer(id:number) {
-        if(this.state.cardAttributes[id - 1].isRemoved()) {
+        if(this.state.cardAttributes[id - 1].isRemoved() || this.state.cardAttributes[id - 1].isMissed()) {
             return
         }
+        this.state.cardAttributes[id - 1].missed()
         this.props.wrongAnswer()
     }
 
