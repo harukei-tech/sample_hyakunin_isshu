@@ -89,11 +89,18 @@ class Game extends React.Component<{}, GameState>{
     }
 
     endGame() {
-        console.log("ended")
         this.setState({
             scene: 'END',
             point: this.state.point,
             shuffledIdList: this.state.shuffledIdList,
+        })
+    }
+    resetGame() {
+        const shuffledIdList = this.getRandomIds(this.totalCard)
+        this.setState({
+            scene: 'START',
+            point: 0,
+            shuffledIdList: shuffledIdList,
         })
     }
 
@@ -101,16 +108,20 @@ class Game extends React.Component<{}, GameState>{
         switch (this.state.scene) {
             case 'START':
                 return (
-                    <div>
-                        <ol><button onClick={() => this.startGame()}>start!</button></ol>
+                    <div className='rounded bg-sky-500'>
+                        <button onClick={() => this.startGame()}>start!</button>
                     </div>
                 )
             case 'IN_GAME':
             case 'END':
-                let board
+                let board, resetButton
                 if(this.state.scene === 'IN_GAME') {
                     board =  <div className="game-board">
                         <Board endGame={() => this.endGame()} correctAnswer={() => this.increasePoint()} wrongAnswer={() => this.decreasePoint()} shuffledIdList={this.state.shuffledIdList} />
+                    </div>
+                } else {
+                    resetButton = <div className='rounded bg-sky-500'>
+                        <button onClick={() => this.resetGame()}>restart!</button>
                     </div>
                 }
                     return (
@@ -120,6 +131,7 @@ class Game extends React.Component<{}, GameState>{
                             <Timer stop={this.state.scene === 'END'}></Timer>
                         </div>
                         {board}
+                        {resetButton}
                     </div>
                 )
             default:
